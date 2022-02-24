@@ -38,9 +38,9 @@ return (Math.floor(Math.random()*2) == 0) ? 'heads' : 'tails';
  */
 
 export function coinFlips(flips) {
-  coinArray = new Array(flips);
+  var coinArray = [];
   for(var x=0; x<flips; x++){
-    coinArray[x] = coinFlip();
+    coinArray.push(coinFlip());
   }
   return coinArray;
 }
@@ -59,17 +59,17 @@ export function coinFlips(flips) {
  */
 
 export function countFlips(array) {
-var numberH;
-var numberT;
-for(var i=0;i<array.length(); i++){
-  if(array[i].startsWith("heads")){
+var numberH= 0;
+var numberT= 0;
+for(var i=0;i<array.length; i++){
+  if(array[i]===("heads")){
     numberH++;
   }
-  else if(array[i].startsWith("tails")){
+  else if(array[i]===("tails")){
     numberT++;
   }
 }
-return `heads: ${numberH}, tails: ${numberT}`;
+return { "heads": numberH, "tails": numberT };
 }
 
 /** Flip a coin!
@@ -86,10 +86,10 @@ return `heads: ${numberH}, tails: ${numberT}`;
 export function flipACoin(call) {
 var theCoin = coinFlip();
   if(theCoin.startsWith(call)){
-  return `call: '${call}', flip: '${theCoin}', result: win`;
+  return {"call": call, flip: theCoin, result: "win"};
   }
   else{
-    return `call: '${call}', flip: '${theCoin}', result: lose`;
+    return {"call": call, flip: theCoin, result: "lose"};
   }
   
 }
