@@ -9,6 +9,11 @@ args['number']
 const number = args.number
 
 var apple = [];
+if(number>0){
 apple = coinFlips(number);
+}
+else{
+    apple = coinFlips(1);
+}
 console.log(apple);
 console.log(countFlips(apple));
