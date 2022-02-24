@@ -9,7 +9,7 @@ args['number']
 const number = args.number
 
 var apple = [];
-if(number>0){
+if(typeof number === 'number' ){
 apple = coinFlips(number);
 }
 else{
