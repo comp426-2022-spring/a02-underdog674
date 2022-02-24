@@ -85,7 +85,7 @@ return { "heads": numberH, "tails": numberT };
 
 export function flipACoin(call) {
 var theCoin = coinFlip();
-  if(theCoin.startsWith(call)){
+  if(theCoin===call){
   return {"call": call, flip: theCoin, result: "win"};
   }
   else{
