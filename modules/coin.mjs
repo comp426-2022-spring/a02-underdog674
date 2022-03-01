@@ -61,6 +61,12 @@ export function coinFlips(flips) {
 export function countFlips(array) {
 var numberH= 0;
 var numberT= 0;
+if(array.length === 1 && array[0]==="heads"){
+  return { "heads": numberH };
+}
+if(array.length === 1 && array[0]==="tails"){
+  return {  "tails": numberT };
+}
 for(var i=0;i<array.length; i++){
   if(array[i]===("heads")){
     numberH++;
