@@ -62,9 +62,11 @@ export function countFlips(array) {
 var numberH= 0;
 var numberT= 0;
 if(array.length === 1 && array[0]==="heads"){
+  numberH++;
   return { "heads": numberH };
 }
 if(array.length === 1 && array[0]==="tails"){
+  numberT++;
   return {  "tails": numberT };
 }
 for(var i=0;i<array.length; i++){
